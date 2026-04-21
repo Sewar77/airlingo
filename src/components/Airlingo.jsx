@@ -78,7 +78,7 @@ const Airlingo = () => {
               opacity: 0,
               transform: "translateY(20px)",
               animation: "fadeUp 0.8s ease forwards",
-              transition: "all 0.4s ease",
+              transition: "all 0.6s ease",
               "&:hover": {
                 transform: "scale(1.05)",
                 boxShadow: 16,
@@ -109,7 +109,7 @@ const Airlingo = () => {
               boxShadow: 6,
               transform: "translateY(20px)",
               animation: "fadeUp 0.8s ease forwards",
-              transition: "all 0.4s ease",
+              transition: "all 0.6s ease",
               "&:hover": {
                 transform: "scale(1.05)",
                 boxShadow: 16,
@@ -131,7 +131,9 @@ const Airlingo = () => {
           <Button
             variant="contained"
             size="large"
-            onClick={handleRegister}
+            href="https://forms.cloud.microsoft/r/RVBgvvLq0m?origin=lprLink"
+            target="_blank"
+            rel="noopener noreferrer"
             sx={{
               px: 5,
               py: 1.5,
