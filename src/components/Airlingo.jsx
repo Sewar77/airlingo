@@ -14,9 +14,9 @@ import { useNavigate } from "react-router-dom";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import FacebookIcon from "@mui/icons-material/Facebook";
+
 const Airlingo = () => {
   const navigate = useNavigate();
-
   const primaryColor = "#1976d2";
 
   const handleRegister = () => {
@@ -25,15 +25,13 @@ const Airlingo = () => {
 
   return (
     <>
+      {/* Navbar */}
       <AppBar position="sticky" sx={{ backgroundColor: primaryColor }}>
         <Toolbar
           sx={{
             display: "flex",
-            flexDirection: "row",
             justifyContent: "space-between",
-            gap: 6,
-            m: 3,
-            fontWeight: "bolder",
+            px: { xs: 2, md: 6 },
           }}
         >
           <Typography variant="h6">Airlingo</Typography>
@@ -43,90 +41,84 @@ const Airlingo = () => {
         </Toolbar>
       </AppBar>
 
+      {/* Hero Section */}
       <Container maxWidth="lg" sx={{ mt: 6, mb: 6 }}>
-        <Typography variant="h3" align="center" gutterBottom>
+        <Typography
+          variant="h3"
+          align="center"
+          gutterBottom
+          sx={{ fontSize: { xs: "2rem", md: "3rem" } }}
+        >
           Airlingo Event
         </Typography>
 
         <Typography
           variant="subtitle1"
           align="center"
-          sx={{ mb: 5, color: "gray" }}
+          sx={{ mb: 5, color: "gray", px: { xs: 2, md: 0 } }}
         >
           Join the experience. Learn. Connect. Pretend you understood everything
           in the event.
         </Typography>
 
-        <Container
-          sx={{
-            display: "flex",
-            flexDirection: "row",
-            justifyContent: "space-between",
-            gap: 6,
-          }}
-        >
-          <Box
-            component="img"
-            src="/a.png"
-            alt="example"
-            sx={{
-              width: "100%",
-              height: 300,
-              objectFit: "cover",
-              borderRadius: 2,
-              boxShadow: 6,
-              opacity: 0,
-              transform: "translateY(20px)",
-              animation: "fadeUp 0.8s ease forwards",
-              transition: "all 0.6s ease",
-              "&:hover": {
-                transform: "scale(1.05)",
-                boxShadow: 16,
-              },
-              "@keyframes fadeUp": {
-                "0%": {
-                  opacity: 0,
-                  transform: "translateY(20px)",
+        {/* Responsive Images */}
+        <Grid container spacing={4}>
+          <Grid item xs={12} md={6}>
+            <Box
+              component="img"
+              src="/a.png"
+              alt="example"
+              sx={{
+                width: "100%",
+                height: { xs: 200, md: 300 },
+                objectFit: "cover",
+                borderRadius: 2,
+                boxShadow: 6,
+                opacity: 0,
+                transform: "translateY(20px)",
+                animation: "fadeUp 0.8s ease forwards",
+                transition: "all 0.6s ease",
+                "&:hover": {
+                  transform: "scale(1.05)",
+                  boxShadow: 16,
                 },
-                "100%": {
-                  opacity: 1,
-                  transform: "translateY(0)",
+                "@keyframes fadeUp": {
+                  "0%": { opacity: 0, transform: "translateY(20px)" },
+                  "100%": { opacity: 1, transform: "translateY(0)" },
                 },
-              },
-            }}
-          />
+              }}
+            />
+          </Grid>
 
-          <Box
-            component="img"
-            src="/b.png"
-            alt="example"
-            sx={{
-              width: "100%",
-              height: 300,
-              objectFit: "cover",
-              borderRadius: 2,
-              opacity: 0,
-              boxShadow: 6,
-              transform: "translateY(20px)",
-              animation: "fadeUp 0.8s ease forwards",
-              transition: "all 0.6s ease",
-              "&:hover": {
-                transform: "scale(1.05)",
-                boxShadow: 16,
-              },
-              "@keyframes fadeUp": {
-                "0%": {
-                  opacity: 0,
-                  transform: "translateY(20px)",
+          <Grid item xs={12} md={6}>
+            <Box
+              component="img"
+              src="/b.png"
+              alt="example"
+              sx={{
+                width: "100%",
+                height: { xs: 200, md: 300 },
+                objectFit: "cover",
+                borderRadius: 2,
+                boxShadow: 6,
+                opacity: 0,
+                transform: "translateY(20px)",
+                animation: "fadeUp 0.8s ease forwards",
+                transition: "all 0.6s ease",
+                "&:hover": {
+                  transform: "scale(1.05)",
+                  boxShadow: 16,
                 },
-                "100%": {
-                  opacity: 1,
-                  transform: "translateY(0)",
+                "@keyframes fadeUp": {
+                  "0%": { opacity: 0, transform: "translateY(20px)" },
+                  "100%": { opacity: 1, transform: "translateY(0)" },
                 },
-              },
-            }}
-          />
-        </Container>
+              }}
+            />
+          </Grid>
+        </Grid>
+
+        {/* Register Button */}
         <Box sx={{ display: "flex", justifyContent: "center", mt: 6 }}>
           <Button
             variant="contained"
@@ -135,9 +127,9 @@ const Airlingo = () => {
             target="_blank"
             rel="noopener noreferrer"
             sx={{
-              px: 5,
+              px: { xs: 3, md: 5 },
               py: 1.5,
-              fontSize: "1.2rem",
+              fontSize: { xs: "1rem", md: "1.2rem" },
               borderRadius: 3,
               textTransform: "none",
               backgroundColor: primaryColor,
@@ -151,17 +143,17 @@ const Airlingo = () => {
           </Button>
         </Box>
       </Container>
+
+      {/* Footer */}
       <Box
         sx={{
           mt: 10,
           py: 4,
           backgroundColor: primaryColor,
           color: "white",
-
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          justifyContent: "center",
           textAlign: "center",
         }}
       >
@@ -169,15 +161,7 @@ const Airlingo = () => {
           Owned & Created by <strong>SDK</strong>
         </Typography>
 
-        <Stack
-          direction="row"
-          spacing={2}
-          sx={{
-            mb: 2,
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
+        <Stack direction="row" spacing={2} sx={{ mb: 2 }}>
           <IconButton
             href="https://www.instagram.com/sdktraining/"
             target="_blank"
@@ -185,7 +169,6 @@ const Airlingo = () => {
           >
             <InstagramIcon />
           </IconButton>
-
           <IconButton
             href="https://jo.linkedin.com/company/sdk-training-center"
             target="_blank"
@@ -193,7 +176,6 @@ const Airlingo = () => {
           >
             <LinkedInIcon />
           </IconButton>
-
           <IconButton
             href="https://www.facebook.com/SDKcompany/"
             target="_blank"
