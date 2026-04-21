@@ -35,7 +35,11 @@ const Airlingo = () => {
           }}
         >
           <Typography variant="h6">Airlingo</Typography>
-          <Button color="inherit" onClick={handleRegister}>
+          <Button
+            color="inherit"
+            href="https://forms.cloud.microsoft/r/RVBgvvLq0m?origin=lprLink"
+            target="_blank"
+          >
             Register
           </Button>
         </Toolbar>
