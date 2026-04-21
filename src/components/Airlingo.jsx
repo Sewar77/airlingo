@@ -67,7 +67,7 @@ const Airlingo = () => {
         >
           <Box
             component="img"
-            src="../../src/assets/a.png"
+            src="../assets/a.png"
             alt="example"
             sx={{
               width: "100%",
